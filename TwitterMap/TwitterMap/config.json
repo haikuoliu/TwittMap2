@@ -1,0 +1,14 @@
+{
+	"twitter": {
+		"consumer_key": "uuchxIS2TFhIwAniWsnlq0Pwv",
+		"consumer_secret": "I9uQ7S2iKRFiFsbW7v1pLc2QETn74QasyVwDZ02jnnXTcsVDYG",
+		"access_token": "785668193465401348-FakTCROba7Icmsf87d0MJOA9YyiTnZk",
+		"access_token_secret": "UZpgs53Qd1CNJgQ9OqeCyLbp7b2mgIbpZWrRn1GR68lW1"
+	},
+
+	"elasticsearch": {
+		"nodes": [
+			{ "host": "localhost", "port": 9200 }
+		]
+	}
+}

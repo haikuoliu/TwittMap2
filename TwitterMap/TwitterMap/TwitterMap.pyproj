@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e536aa4e-c37a-46f8-9ddf-4c6e96decc57</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>worker.py</StartupFile>
+    <StartupFile>mapping.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="config.py" />
+    <Compile Include="mapping.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="snsPrep.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,9 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>Amd64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="example.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

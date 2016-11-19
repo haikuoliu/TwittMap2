@@ -27,8 +27,8 @@ def worker(_):
                 response = json.dumps(alchemy_language.sentiment(text=tweet['text']),indent=2)
                 if response['status'] == 'OK':
                     tweet['sentiment'] = response['docSentiment']['type']
-                    encode  = json.dumps(tweet, ensure_ascii = False)
-                    topic.publish(Message=encoded)
+                    json_message  = json.dumps(tweet, ensure_ascii = False)
+                    topic.publish(Message = json_message)
             finally:
                 message.delete()
 

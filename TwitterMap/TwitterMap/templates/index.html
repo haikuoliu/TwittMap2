@@ -1,0 +1,38 @@
+{#<!doctype html>#}
+<title>TwittMap with Trends</title>
+{#{% if name %}#}
+{#  <h1>Hello {{ name }}!</h1>#}
+{#{% else %}#}
+{#  <h1>Hello World!</h1>#}
+{#{% endif %}#}
+
+<html>
+<head>
+<style>
+#all{
+    margin:190px auto;
+    width:400px;
+    height:200px;
+}
+</style>
+</head>
+<body>
+<div id="all" style="text-align:center">
+<h2>Select a key word and we'll show markers of filtered tweets on the map!</h2>
+
+<select id="keywords" style="height: 20px; width: 80px;">
+  <option value ="key1">pretty</option>
+  <option value ="key1">girl</option>
+  <option value ="key2">basketball</option>
+  <option value="key3">marvel</option>
+  <option value="key4">physics</option>
+  <option value="key4">Chinese</option>
+  <option value="key4">Trump</option>
+  <option value="key4">gun</option>
+</select>
+
+<button style="height: 20px; width: 60px;" onclick = "window.location.href='/googlemap\/'.
+concat(document.getElementById('keywords').options[window.document.getElementById('keywords').selectedIndex].text)"> Show </button>
+</div>
+</body>
+</html>

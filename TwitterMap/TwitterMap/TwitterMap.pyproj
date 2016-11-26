@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e536aa4e-c37a-46f8-9ddf-4c6e96decc57</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>mapping.py</StartupFile>
+    <StartupFile>streaming.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

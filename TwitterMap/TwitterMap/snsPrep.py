@@ -6,7 +6,7 @@ sns = boto3.resource('sns')
 # When called repeatedly, the existing topic will be returned
 def create_topic():
     # Creates a topic to which notifications can be published.
-    topic = sns.create_topic(Name='SentimentTwitterMap')
+    topic = sns.create_topic(Name='SentimentTwitterMap_Test')
     return topic
 
 

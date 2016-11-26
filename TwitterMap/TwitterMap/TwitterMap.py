@@ -1,67 +1,42 @@
-import tweepy
-from tweepy.streaming import StreamListener
-from tweepy import OAuthHandler
-from tweepy import Stream
 import json
-import config as Conf
-import pandas as pd
-from elasticsearch import Elasticsearch
 import boto3
-from codecs import open
-from dateutil import parser
-import time
+from snsPrep import create_topic
+from multiprocessing import Pool
+import httplib, urllib, base64
+from watson_developer_cloud import AlchemyLanguageV1
 import requests
 
-consumer_key=Conf.TWITTER_APP_KEY
-consumer_secret=Conf.TWITTER_APP_KEY_SECRET
-access_token=Conf.TWITTER_ACCESS_TOKEN
-access_token_secret=Conf.TWITTER_ACCESS_TOKEN_SECRET
-es= Elasticsearch()
-    
+headers = {
+    # Request headers
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': '{511759357b824ccc8b8336b6ebba9ad7}',
+}
+
 sqs = boto3.resource('sqs')
 queue = sqs.get_queue_by_name(QueueName='Erinyes')
+sns = boto3.resource('sns')
+topic = create_topic()
 
-def appendlog(f, s):
-    f.write(u'[{0}] {1}\n'.format(time.strftime('%Y-%m-%dT%H:%M:%SZ'), s))
-    f.flush()
+alchemy_language = AlchemyLanguageV1(api_key='6de8f373d9e238ea73e7c2d737cc0ab4effb0079')
+url = 'https://gateway-a.watsonplatform.net/calls'
 
-class StdOutListener(StreamListener):
-    """ A listener handles tweets that are received from the stream.
-    This is a basic listener that just prints received tweets to stdout.
-    """    
-    def __init__(self, f):
-        super(StdOutListener, self).__init__()
-        self.f = f
-
-    def on_data(self, data):
-        try:
-            decoded = json.loads(data)
-            if decoded.get('lang') == 'en' and decoded.get('coordinates') is not None:
-                geo = decoded['coordinates']['coordinates']
-                timestamp = parser.parse(decoded['created_at']).strftime('%Y-%m-%dT%H:%M:%SZ')
-                tweet = {
-                    'user': decoded['user']['screen_name'],
-                    'text': decoded['text'],
-                    'geo': geo,
-                    'time': timestamp
-                }
-                encoded = json.dumps(tweet, ensure_ascii=False)
-                queue.send_message(MessageBody=encoded)
-                appendlog(self.f, encoded)
-        except Exception as e:
-            appendlog(self.f, '{0}: {1}'.format(type(e), str(e)))
-
-    def on_error(self, status):
-        if status == 420:  # rate limited
-            appendlog(self.f, 'Error 420')
-            return False
+def worker(_):
+    while True:
+        for message in queue.receive_messages(MaxNumberOfMessages = 10, WaitTimeSeconds = 20):
+            try:
+                tweet = json.loads(message.body)
+                response = json.dumps(alchemy_language.sentiment(text=tweet['text']),indent=2)
+                if response['status'] == 'OK':
+                    tweet['sentiment'] = response['docSentiment']['type']
+                    json_message  = json.dumps(tweet, ensure_ascii = False)
+                    topic.publish(Message = json_message)
+            finally:
+                message.delete()
+                
 
 if __name__ == '__main__':
-    with open('streaming.log', 'a', encoding='utf8') as f:
-        appendlog(f, 'Program starts')
-        l = StdOutListener(f)
-        auth = OAuthHandler(consumer_key, consumer_secret)
-        auth.set_access_token(access_token, access_token_secret)
-
-        stream = Stream(auth, l)
-        stream.filter(track=['basketball', 'Trump', 'pretty', 'job', 'Microsoft'])
+    pool = Pool(3)
+    pool.map(worker, range(3))
+                        #es.index(index = 'sentitwitter', doc_type = 'tweet', body = ntweet)
+                        #esheaders = {'content-type': 'application/json'}
+                    #requests.post(esurl, data = json_message, headers = esheaders)

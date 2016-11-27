@@ -67,7 +67,9 @@ def sns():
 
     if hdr == 'Notification':
         print "comes notification"
-        msg_process(js)
+        print type(js)
+        print js
+        print js['Message']
         # msg_process(js['Message'], js['Timestamp'])
         # send message to the front here
    # subscribe to the SNS topic
@@ -77,9 +79,9 @@ def sns():
 
 
 # process the message that we get frm sns
-def msg_process(msg):
-    js = json.loads(msg)
-    print js['Message']
+# def msg_process(msg):
+    # js = json.loads(msg)
+    # print js['Message']
 
 
 @application.route('/google_map/<keyword>')

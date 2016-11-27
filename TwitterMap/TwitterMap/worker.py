@@ -1,16 +1,10 @@
-import json
 import boto3
 from snsPrep import create_topic
 from elasticsearch import Elasticsearch,RequestsHttpConnection
-from multiprocessing import Pool
-import httplib, urllib, base64
 from watson_developer_cloud import AlchemyLanguageV1
 from requests_aws4auth import AWS4Auth
-from streaming import *
-import requests
-import urllib2
+import json
 import thread
-import time
 
 headers = {
     # Request headers
@@ -63,13 +57,15 @@ def worker():
 
 
 def worker_pool(num):
-    thread.start_new_thread(worker())
-    # for i in range(1, num):
+    for i in range(0, num):
+        thread.start_new_thread(worker())
+        print i
 
 
 if __name__ == '__main__':
-    thread.start_new_thread(worker())
-    thread.start_new_thread(worker())
+    # thread.start_new_thread(worker())
+    # thread.start_new_thread(worker())
+    worker_pool(3)
     # ls = TwitterMapListener()
     # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     # auth.set_access_token(access_token, access_token_secret)

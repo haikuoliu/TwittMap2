@@ -14,28 +14,6 @@ def index():
     return render_template('index.html');
 
 
-@application.route('/start_streaming')
-def start_streaming():
-    print "start_streaming!!!"
-    # start streaming
-    ls = TwitterMapListener()
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
-    stream = tweepy.Stream(auth, ls)
-    # stream for the keyword, and send it to sqs
-    stream.filter(track=["Trump", "basketball", "pretty", "Facebook", "LinkedIn",
-                            "Amazon", "Google", "Uber", "Columbia", "New York"])
-    # receive tweets from sqs, send it to sns
-
-
-@application.route('/start_workers')
-def start_workers():
-    print "start_workers!!!"
-    thread.start_new_thread(worker())
-    thread.start_new_thread(worker())
-
-
-
 @application.route('/data/<keyword>')
 def data(keyword):
     # get data from es
@@ -78,6 +56,7 @@ def updatedata(keyword):
 # this is the endpoint of sns
 @application.route('/sns', methods=['GET', 'POST', 'PUT'])
 def sns():
+    print "connected!!"
     # AWS sends JSON with text/plain mimetype
     try:
         js = json.loads(request.data)
@@ -102,6 +81,7 @@ def msg_process(msg, tstamp):
     msg = 'Region: {0} / Alarm: {1}'.format(
         js['Region'], js['AlarmName']
     )
+    print msg
 
 
 @application.route('/google_map/<keyword>')
@@ -122,5 +102,4 @@ if __name__ == '__main__':
         port=5000
         # threaded=True
     )
-
 

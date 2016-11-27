@@ -1,11 +1,15 @@
-from flask import Flask
+from flask import render_template, request, Flask
 from streaming import *
-
+from worker import *
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
+@app.route('/test')
+def test():
+    return render_template('index.html');
+
+@app.route('/<keyword>')
+def index(keyword):
     print "start_streaming!!!"
     # start streaming
     ls = TwitterMapListener()
@@ -13,8 +17,13 @@ def index():
     auth.set_access_token(access_token, access_token_secret)
     stream = tweepy.Stream(auth, ls)
     # stream for the keyword, and send it to sqs
-    stream.filter(track=["Trump", "basketball", "pretty", "Facebook", "LinkedIn",
-                            "Amazon", "Google", "Uber", "Columbia", "New York"])
+    stream.filter(track=[keyword])
+
+
+@app.route('/start_workers')
+def start_workers():
+    print "start_workers!!!"
+    worker_pool(3)
 
 
 if __name__ == '__main__':

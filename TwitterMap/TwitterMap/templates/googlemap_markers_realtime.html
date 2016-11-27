@@ -36,7 +36,7 @@
 
       function eqfeed_callback(results) {
           $.get("http://127.0.0.1:5000/start_workers")
-//          $.get("http://127.0.0.1:5000/start_streaming")
+          $.get("http://127.0.0.1:5000/start_streaming")
 
         $(document).ready(function() {
           socket = io.connect('http://' + document.domain + ':' + location.port);

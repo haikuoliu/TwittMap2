@@ -59,9 +59,6 @@ def sns():
 
     # AWS sends JSON with text/plain mimetype
     try:
-        print "connected!!"
-        print request.data
-        print type(request.data)
         js = json.loads(request.data)
     except:
         pass
@@ -70,6 +67,7 @@ def sns():
 
     if hdr == 'Notification':
         print "comes notification"
+        msg_process(js)
         # msg_process(js['Message'], js['Timestamp'])
         # send message to the front here
    # subscribe to the SNS topic
@@ -81,11 +79,7 @@ def sns():
 # process the message that we get frm sns
 def msg_process(msg):
     js = json.loads(msg)
-    print "from sns!:" + js
-    # msg = 'Region: {0} / Alarm: {1}'.format(
-    #     js['Region'], js['AlarmName']
-    # )
-    print msg['Message']
+    print js['Message']
 
 
 @application.route('/google_map/<keyword>')

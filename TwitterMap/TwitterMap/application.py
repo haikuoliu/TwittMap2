@@ -56,7 +56,6 @@ def updatedata(keyword):
 # this is the endpoint of sns
 @application.route('/sns', methods=['GET', 'POST', 'PUT'])
 def sns():
-
     # AWS sends JSON with text/plain mimetype
     try:
         js = json.loads(request.data)
@@ -74,12 +73,6 @@ def sns():
     elif hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
         requests.get(js['SubscribeURL'])
     return 'OK\n'
-
-
-# process the message that we get frm sns
-# def msg_process(msg):
-    # js = json.loads(msg)
-    # print js['Message']
 
 
 @application.route('/google_map/<keyword>')

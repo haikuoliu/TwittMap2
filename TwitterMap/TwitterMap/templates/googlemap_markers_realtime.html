@@ -43,6 +43,7 @@
           console.log("connected to " + 'http://' + document.domain + ':' + location.port + " via socket")
           socket.on('real_tweets', function(message) {
             console.log("received new tweets!");
+            console.log(message);
             var icons = {
               neg: {
                 url: 'http://maps.google.com/mapfiles/kml/pal4/icon52.png'

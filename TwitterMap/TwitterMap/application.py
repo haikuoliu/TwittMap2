@@ -67,11 +67,9 @@ def sns():
 
     if hdr == 'Notification':
         print "comes notification"
-        print type(js)
-        print js
-        print js['Message']
-        # msg_process(js['Message'], js['Timestamp'])
+        print "Message:" + js['Message']
         # send message to the front here
+        socketio.emit('real_tweets', js['Message'])
    # subscribe to the SNS topic
     elif hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
         requests.get(js['SubscribeURL'])

@@ -67,25 +67,25 @@ def sns():
         pass
 
     hdr = request.headers.get('X-Amz-Sns-Message-Type')
-    # subscribe to the SNS topic
-    # if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
-    #     requests.get(js['SubscribeURL'])
 
     if hdr == 'Notification':
         print "comes notification"
         # msg_process(js['Message'], js['Timestamp'])
         # send message to the front here
+   # subscribe to the SNS topic
+    elif hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
+        requests.get(js['SubscribeURL'])
     return 'OK\n'
 
 
 # process the message that we get frm sns
-def msg_process(msg, tstamp):
+def msg_process(msg):
     js = json.loads(msg)
     print "from sns!:" + js
-    msg = 'Region: {0} / Alarm: {1}'.format(
-        js['Region'], js['AlarmName']
-    )
-    print msg
+    # msg = 'Region: {0} / Alarm: {1}'.format(
+    #     js['Region'], js['AlarmName']
+    # )
+    print msg['Message']
 
 
 @application.route('/google_map/<keyword>')

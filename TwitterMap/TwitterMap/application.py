@@ -68,8 +68,8 @@ def sns():
 
     hdr = request.headers.get('X-Amz-Sns-Message-Type')
     # subscribe to the SNS topic
-    if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
-        requests.get(js['SubscribeURL'])
+    # if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
+    #     requests.get(js['SubscribeURL'])
 
     if hdr == 'Notification':
         print "comes notification"

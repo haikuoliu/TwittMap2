@@ -10,7 +10,7 @@ def test():
 
 
 @app.route('/start_streaming/<keyword>')
-def index(keyword):
+def start_streaming(keyword):
     print "start_streaming!!!"
     # start streaming
     ls = TwitterMapListener()
@@ -19,12 +19,14 @@ def index(keyword):
     stream = tweepy.Stream(auth, ls)
     # stream for the keyword, and send it to sqs
     stream.filter(track=[keyword])
+    return 'OK'
 
 
 @app.route('/start_workers')
 def start_workers():
     print "start_workers!!!"
     worker_pool(3)
+    return 'OK'
 
 
 if __name__ == '__main__':

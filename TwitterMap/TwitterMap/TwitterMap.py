@@ -8,7 +8,8 @@ app = Flask(__name__)
 def test():
     return render_template('index.html');
 
-@app.route('/<keyword>')
+
+@app.route('/start_streaming/<keyword>')
 def index(keyword):
     print "start_streaming!!!"
     # start streaming

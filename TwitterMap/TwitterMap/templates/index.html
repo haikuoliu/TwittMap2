@@ -22,17 +22,20 @@
 
 <select id="keywords" style="height: 20px; width: 80px;">
   <option value ="key1">pretty</option>
-  <option value ="key1">girl</option>
-  <option value ="key2">basketball</option>
-  <option value="key3">marvel</option>
-  <option value="key4">physics</option>
-  <option value="key4">Chinese</option>
-  <option value="key4">Trump</option>
-  <option value="key4">gun</option>
+  <option value ="key2">girl</option>
+  <option value ="key3">basketball</option>
+  <option value="key4">marvel</option>
+  <option value="key5">physics</option>
+  <option value="key6">Chinese</option>
+  <option value="key7">Trump</option>
+  <option value="key8">gun</option>
 </select>
 
-<button style="height: 20px; width: 60px;" onclick = "window.location.href='/googlemap\/'.
-concat(document.getElementById('keywords').options[window.document.getElementById('keywords').selectedIndex].text)"> Show </button>
+<button style="height: 20px; width: 60px;" onclick = "window.location.href='/google_map\/'.
+concat(document.getElementById('keywords').options[window.document.getElementById('keywords').selectedIndex].text)"> FromEs </button>
+
+  <button style="height: 20px; width: 60px;" onclick = "window.location.href='/google_map_real\/'.
+concat(document.getElementById('keywords').options[window.document.getElementById('keywords').selectedIndex].text)"> RealTime</button>
 </div>
 </body>
 </html>

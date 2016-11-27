@@ -1,5 +1,4 @@
 import json
-import time
 import config as Conf
 from codecs import open
 from dateutil import parser
@@ -9,11 +8,10 @@ import boto3
 sqs = boto3.resource('sqs')
 queue = sqs.get_queue_by_name(QueueName='Erinyes')
 
-consumer_key=Conf.TWITTER_APP_KEY
-consumer_secret=Conf.TWITTER_APP_KEY_SECRET
-access_token=Conf.TWITTER_ACCESS_TOKEN
-access_token_secret=Conf.TWITTER_ACCESS_TOKEN_SECRET
-
+consumer_key = Conf.TWITTER_APP_KEY
+consumer_secret = Conf.TWITTER_APP_KEY_SECRET
+access_token = Conf.TWITTER_ACCESS_TOKEN
+access_token_secret = Conf.TWITTER_ACCESS_TOKEN_SECRET
 
 
 class TwitterMapListener(tweepy.StreamListener):
@@ -35,8 +33,6 @@ class TwitterMapListener(tweepy.StreamListener):
                 encoded_message = json.dumps(tweet, ensure_ascii=False)
                 queue.send_message(MessageBody=encoded_message)
                 print encoded_message
-
-
         except Exception as e:
             print 'error'
 

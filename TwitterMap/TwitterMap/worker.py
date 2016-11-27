@@ -6,8 +6,11 @@ from multiprocessing import Pool
 import httplib, urllib, base64
 from watson_developer_cloud import AlchemyLanguageV1
 from requests_aws4auth import AWS4Auth
+from streaming import *
 import requests
 import urllib2
+import thread
+import time
 
 headers = {
     # Request headers
@@ -39,24 +42,42 @@ try:
 except Exception, e:
     pass
 
-def worker(_):
+def worker():
     while True:
         for message in queue.receive_messages(MaxNumberOfMessages = 10, WaitTimeSeconds = 20):
+            # print message.body
             try:
-                tweet = json.loads(message.body)
-                response = json.dumps(alchemy_language.sentiment(text=tweet['text']), indent = 2)
+                tweet = json.loads((message.body).encode('ascii', 'ignore'))
+                response = json.dumps(alchemy_language.sentiment(text=tweet['text'].encode('ascii', 'ignore')), indent = 2)
                 responseDict = json.loads(response)
                 if responseDict['status'] == 'OK':
+                    print "get a msg from sqs!"
                     tweet['sentiment'] = responseDict['docSentiment']['type']
                     #json_message = json.dumps(tweet)
                     json_message  = json.dumps(tweet, ensure_ascii = False)
-                    #topic.publish(Message = json_message)
+                    topic.publish(Message = json_message)
                     es.index(index = 'sentitwitter', doc_type = 'tweet', body = tweet)
 
             finally:
                 message.delete()
 
+
+def worker_pool(num):
+    thread.start_new_thread(worker())
+    # for i in range(1, num):
+
+
 if __name__ == '__main__':
-    pool = Pool(3)
-    pool.map(worker, range(3))
+    thread.start_new_thread(worker())
+    thread.start_new_thread(worker())
+    # ls = TwitterMapListener()
+    # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    # auth.set_access_token(access_token, access_token_secret)
+    # stream = tweepy.Stream(auth, ls)
+    # stream.filter(track=["Trump", "basketball", "pretty", "Facebook", "LinkedIn",
+    #                         "Amazon", "Google", "Uber", "Columbia", "New York"])
+
+    # pool = Pool(3)
+    # pool.map(worker, range(3))
+
 

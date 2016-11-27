@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="keyword">{{ keyword }}</div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: new google.maps.LatLng(2.8,-187.3),
+          mapTypeId: 'terrain'
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+
+        script.src = location.origin + "/data/" + document.getElementById('keyword').innerText;
+          document.getElementsByTagName('head')[0].appendChild(script);
+
+      }
+
+      function eqfeed_callback(results) {
+          $.get("http://127.0.0.1:5000/start_workers")
+//          $.get("http://127.0.0.1:5000/start_streaming")
+
+        $(document).ready(function() {
+          socket = io.connect('http://' + document.domain + ':' + location.port);
+          console.log("connected to " + 'http://' + document.domain + ':' + location.port + " via socket")
+          socket.on('real_tweets', function(message) {
+            console.log("received new tweets!");
+            var icons = {
+              neg: {
+                url: 'http://maps.google.com/mapfiles/kml/pal4/icon52.png'
+              },
+              pos: {
+                url: 'http://maps.google.com/mapfiles/kml/pal4/icon60.png'
+              },
+              neu: {
+                url: 'http://maps.google.com/mapfiles/dir_walk_0.png'
+              }
+            };
+            results = message;
+            for (var i = 0; i < results.hits.length; i++) {
+              var latLng = new google.maps.LatLng(results.hits[i]._source.geo.lat, results.hits[i]._source.geo.lon);
+              var senti = results.hits[i]._source.sentiment;
+              if(senti == "positive"){
+                var senti_icon = icons['pos'].url
+              }
+              else if(senti == "neutral"){
+                var senti_icon = icons['neu'].url
+              }
+              else{
+                var senti_icon = icons['neg'].url
+              }
+              var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: senti_icon
+              });
+            }
+          });
+        });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4XoXQq_UAp-1Wh0lc6P5szvpKGc-FepI&callback=initMap">
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
-from flask import render_template, request, Flask
-from worker import *
+from flask import Flask
+from streaming import *
 
 app = Flask(__name__)
 

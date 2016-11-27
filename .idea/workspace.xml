@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbb82255-be5d-4e03-a640-143dc90910a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/TwitterMap.py" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/TwitterMap.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/application.py" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/application.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/worker.py" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/worker.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/test.py" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/test.py" />
     </list>
     <ignored path="TwitterMap_py.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/TwitterMap_py$test.coverage" NAME="test Coverage Results" MODIFIED="1480212303360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
+    <SUITE FILE_PATH="coverage/TwitterMap_py$test.coverage" NAME="test Coverage Results" MODIFIED="1480269098798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$streaming.coverage" NAME="streaming Coverage Results" MODIFIED="1480225610108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$TwitterMap.coverage" NAME="TwitterMap Coverage Results" MODIFIED="1480237002102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$worker.coverage" NAME="worker Coverage Results" MODIFIED="1480268014953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
@@ -37,11 +34,21 @@
       <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="369">
+              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,12 +136,12 @@
       <list>
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/streaming.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/index.html" />
-        <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/test.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/snsPrep.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers.html" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/worker.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/TwitterMap.py" />
+        <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/test.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/application.py" />
       </list>
     </option>
@@ -244,7 +251,7 @@
       <recent name="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.application">
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="application" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -552,11 +559,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.application" />
-        <item index="1" class="java.lang.String" itemvalue="Python.worker" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TwitterMap" />
-        <item index="3" class="java.lang.String" itemvalue="Python.streaming" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.application" />
+        <item index="2" class="java.lang.String" itemvalue="Python.worker" />
+        <item index="3" class="java.lang.String" itemvalue="Python.TwitterMap" />
+        <item index="4" class="java.lang.String" itemvalue="Python.streaming" />
       </list>
     </recent_temporary>
   </component>
@@ -764,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/mapping.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -842,10 +841,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        <state relative-caret-position="369">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>

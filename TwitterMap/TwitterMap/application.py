@@ -56,9 +56,12 @@ def updatedata(keyword):
 # this is the endpoint of sns
 @application.route('/sns', methods=['GET', 'POST', 'PUT'])
 def sns():
-    print "connected!!"
+
     # AWS sends JSON with text/plain mimetype
     try:
+        print "connected!!"
+        print request.data
+        print type(request.data)
         js = json.loads(request.data)
     except:
         pass
@@ -69,7 +72,8 @@ def sns():
         requests.get(js['SubscribeURL'])
 
     if hdr == 'Notification':
-        msg_process(js['Message'], js['Timestamp'])
+        print "comes notification"
+        # msg_process(js['Message'], js['Timestamp'])
         # send message to the front here
     return 'OK\n'
 

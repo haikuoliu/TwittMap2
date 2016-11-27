@@ -13,7 +13,7 @@ class MyThread(threading.Thread):
 
 if __name__ == "__main__":
     print 'main thread is waitting for exit...'
-
+    print type(1)
     for i in range(20):
         t = MyThread()
         t.setDaemon(True)

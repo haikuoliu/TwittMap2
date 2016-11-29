@@ -66,5 +66,5 @@ def worker_pool(num):
 
 
 if __name__ == '__main__':
-    worker()
+    worker_pool(3)
 

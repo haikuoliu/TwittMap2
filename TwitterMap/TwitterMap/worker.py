@@ -38,9 +38,7 @@ except Exception, e:
     pass
 
 def worker():
-    i = 1
-    while i <= 3:
-        i = i + 1;
+    while True:
         for message in queue.receive_messages(MaxNumberOfMessages = 10, WaitTimeSeconds = 20):
             # print message.body
             try:

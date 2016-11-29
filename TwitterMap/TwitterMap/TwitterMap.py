@@ -1,8 +1,9 @@
 from flask import render_template, request, Flask
 from streaming import *
 from worker import *
-app = Flask(__name__)
 
+
+app = Flask(__name__)
 
 @app.route('/test')
 def test():
@@ -32,8 +33,8 @@ def start_workers():
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
-        port=5000,
-        threaded=True
+        port=5000
+        # threaded=True
     )
 
 

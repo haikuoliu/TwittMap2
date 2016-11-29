@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbb82255-be5d-4e03-a640-143dc90910a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py" afterPath="$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py" />
     </list>
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="googlemap_markers_realtime.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="googlemap_markers_realtime.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="134">
+              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -88,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="worker_flask.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="worker_flask.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="304">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -136,8 +135,8 @@
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/snsPrep.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/worker.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/streaming_flask.py" />
-        <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py" />
         <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html" />
+        <option value="$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py" />
       </list>
     </option>
   </component>
@@ -577,9 +576,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18739903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18739903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -917,21 +916,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py">
+    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="134">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html">
+    <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/worker_flask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="304">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

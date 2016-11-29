@@ -55,7 +55,7 @@
               }
             };
             results = JSON.parse(message);
-            var latLng = new google.maps.LatLng(results.geo[0], results.geo[1]);
+            var latLng = new google.maps.LatLng(results.geo[1], results.geo[0]);
             var senti = results.sentiment;
             if(senti == "positive"){
               var senti_icon = icons['pos'].url

@@ -35,9 +35,9 @@
 
       function eqfeed_callback(results) {
           $.get("http://54.147.97.66:3000/start_workers")
-          $.get("http://54.197.212.102:4000/start_streaming/"+document.getElementById('keyword').innerText)
+//          $.get("http://54.197.212.102:4000/start_streaming/"+document.getElementById('keyword').innerText)
           console.log("http://54.197.212.102:3000/start_workers/");
-          console.log("http://54.197.212.102:4000/start_streaming/"+document.getElementById('keyword').innerText);
+//          console.log("http://54.197.212.102:4000/start_streaming/"+document.getElementById('keyword').innerText);
         $(document).ready(function() {
           socket = io.connect('http://' + document.domain + ':' + location.port);
           console.log("connected to " + 'http://' + document.domain + ':' + location.port + " via socket")

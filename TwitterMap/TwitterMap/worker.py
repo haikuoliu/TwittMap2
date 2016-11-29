@@ -37,7 +37,9 @@ except Exception, e:
     pass
 
 def worker():
-    while True:
+    i = 1
+    while i <= 3:
+        i = i + 1;
         for message in queue.receive_messages(MaxNumberOfMessages = 10, WaitTimeSeconds = 20):
             # print message.body
             try:
@@ -63,17 +65,6 @@ def worker_pool(num):
 
 
 if __name__ == '__main__':
-    # thread.start_new_thread(worker())
-    # thread.start_new_thread(worker())
     worker_pool(3)
-    # ls = TwitterMapListener()
-    # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    # auth.set_access_token(access_token, access_token_secret)
-    # stream = tweepy.Stream(auth, ls)
-    # stream.filter(track=["Trump", "basketball", "pretty", "Facebook", "LinkedIn",
-    #                         "Amazon", "Google", "Uber", "Columbia", "New York"])
-
-    # pool = Pool(3)
-    # pool.map(worker, range(3))
 
 

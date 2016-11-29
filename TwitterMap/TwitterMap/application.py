@@ -56,6 +56,7 @@ def updatedata(keyword):
 # this is the endpoint of sns
 @application.route('/sns', methods=['GET', 'POST', 'PUT'])
 def sns():
+    print "go into sns!"
     # AWS sends JSON with text/plain mimetype
     try:
         js = json.loads(request.data)

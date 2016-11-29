@@ -18,7 +18,7 @@
     <SUITE FILE_PATH="coverage/TwitterMap_py$test.coverage" NAME="test Coverage Results" MODIFIED="1480269098798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$streaming.coverage" NAME="streaming Coverage Results" MODIFIED="1480225610108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$TwitterMap.coverage" NAME="TwitterMap Coverage Results" MODIFIED="1480237002102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
-    <SUITE FILE_PATH="coverage/TwitterMap_py$worker.coverage" NAME="worker Coverage Results" MODIFIED="1480385194840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
+    <SUITE FILE_PATH="coverage/TwitterMap_py$worker.coverage" NAME="worker Coverage Results" MODIFIED="1480385409388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
     <SUITE FILE_PATH="coverage/TwitterMap_py$application.coverage" NAME="application Coverage Results" MODIFIED="1480268522960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TwitterMap/TwitterMap" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -57,8 +57,8 @@
       <file leaf-file-name="googlemap_markers_realtime.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            <state relative-caret-position="381">
+              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -915,8 +915,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TwitterMap/TwitterMap/templates/googlemap_markers_realtime.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        <state relative-caret-position="381">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
           <folding />
         </state>
       </provider>

@@ -43,7 +43,7 @@
           console.log("connected to " + 'http://' + document.domain + ':' + location.port + " via socket")
           socket.on('real_tweets', function(message) {
             console.log("received new tweets!");
-            console.log(JSON.parse(message));
+            console.log();
             var icons = {
               neg: {
                 url: 'http://maps.google.com/mapfiles/kml/pal4/icon52.png'
@@ -55,7 +55,7 @@
                 url: 'http://maps.google.com/mapfiles/dir_walk_0.png'
               }
             };
-            results = message;
+            results = JSON.parse(message);
             var latLng = new google.maps.LatLng(results.geo[0], results.geo[1]);
             var senti = results.sentiment;
             if(senti == "positive"){

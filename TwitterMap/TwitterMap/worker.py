@@ -15,7 +15,8 @@ headers = {
 sqs = boto3.resource('sqs')
 queue = sqs.get_queue_by_name(QueueName='Erinyes')
 sns = boto3.resource('sns')
-topic = create_topic()
+topic = sns.create_topic(Name='SentimentTwitterMap_Test')
+topic.subscribe(Protocol='http', Endpoint='http://54.224.56.204:5000/sns')
 
 alchemy_language = AlchemyLanguageV1(api_key='6de8f373d9e238ea73e7c2d737cc0ab4effb0079')
 url = 'https://gateway-a.watsonplatform.net/calls'
@@ -65,6 +66,5 @@ def worker_pool(num):
 
 
 if __name__ == '__main__':
-    worker_pool(3)
-
+    worker()
 

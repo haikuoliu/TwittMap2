@@ -12,7 +12,7 @@ def create_topic():
 
 def subscribe(topic):
     # Subscribe end-point to the topic we just created.
-    topic.subscribe(Protocol='http', Endpoint='http://54.224.56.204:5000/sns')
+    topic.subscribe(Protocol='http', Endpoint='54.224.56.204:5000/sns')
     #   Change the endpoint ip address if not run on localhost
 
 

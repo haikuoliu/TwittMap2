@@ -34,10 +34,10 @@
       }
 
       function eqfeed_callback(results) {
-          $.get("http://54.147.97.66:5000/start_workers")
-          $.get("http://54.197.212.102:5000/start_streaming/"+document.getElementById('keyword').innerText)
-          console.log("http://54.197.212.102:5000/start_workers/");
-          console.log("http://54.197.212.102:5000/start_streaming/"+document.getElementById('keyword').innerText);
+//          $.get("http://54.147.97.66:5000/start_workers")
+//          $.get("http://54.197.212.102:5000/start_streaming/"+document.getElementById('keyword').innerText)
+//          console.log("http://54.197.212.102:5000/start_workers/");
+//          console.log("http://54.197.212.102:5000/start_streaming/"+document.getElementById('keyword').innerText);
         $(document).ready(function() {
           socket = io.connect('http://' + document.domain + ':' + location.port);
           console.log("connected to " + 'http://' + document.domain + ':' + location.port + " via socket")
@@ -56,24 +56,22 @@
               }
             };
             results = message;
-            for (var i = 0; i < results.hits.length; i++) {
-              var latLng = new google.maps.LatLng(results.hits[i]._source.geo.lat, results.hits[i]._source.geo.lon);
-              var senti = results.hits[i]._source.sentiment;
-              if(senti == "positive"){
-                var senti_icon = icons['pos'].url
-              }
-              else if(senti == "neutral"){
-                var senti_icon = icons['neu'].url
-              }
-              else{
-                var senti_icon = icons['neg'].url
-              }
-              var marker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                icon: senti_icon
-              });
+            var latLng = new google.maps.LatLng(results.geo[0], results.geo[1]);
+            var senti = results.sentiment;
+            if(senti == "positive"){
+              var senti_icon = icons['pos'].url
             }
+            else if(senti == "neutral"){
+              var senti_icon = icons['neu'].url
+            }
+            else{
+              var senti_icon = icons['neg'].url
+            }
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              icon: senti_icon
+            });
           });
         });
       }
